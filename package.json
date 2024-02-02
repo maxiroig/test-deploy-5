@@ -1,0 +1,60 @@
+{
+  "name": "@rapidlaunch-it/nuxt-boilerplate",
+  "version": "0.0.1",
+  "author": {
+    "email": "boudydegeer@mosaiqo.com",
+    "name": "Boudy de Geer"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prisma:init": "pnpm prisma:generate",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate",
+    "prisma:studio": "npx prisma studio",
+    "prisma:import": "npx prisma-import",
+    "prisma:all:sql": "pnpm prisma:import && pnpm prisma:generate && pnpm prisma:migrate",
+    "prisma:all:mongo": "pnpm prisma:generate"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/tailwindcss": "^6.9.4",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "@types/nodemailer": "^6.4.14",
+    "eslint": "^8.33.0",
+    "nuxt": "^3.8.2",
+    "sass": "^1.69.4",
+    "semantic-release": "^22.0.6",
+    "typescript": "^5.0.0",
+    "vue": "^3.3.5",
+    "vue-router": "^4.2.5",
+    "vue-tsc": "^1.3.9"
+  },
+  "dependencies": {
+    "@rapidlaunch-it/nuxt-rapidlaunch": "^1.8.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "nuxt": "$nuxt",
+      "@nuxt/devtools": "$@nuxt/devtools",
+      "sass": "$sass",
+      "vue": "$vue",
+      "defu": "6.1.2"
+    }
+  },
+  "prisma": {
+    "import": {
+      "schemas": "./**/**/*.sql.prisma",
+      "output": "./prisma/schema.prisma"
+    }
+  },
+  "packageManager": "pnpm@8.6.1"
+}

@@ -1,0 +1,21 @@
+@import "colors.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
+}
+
+.gradient-bg-main {
+    background: conic-gradient(from 180deg at 50.03% 32.23%,#3b82f6 37.170610427856445deg,#5956ff 136.8750035762787deg,#45adf9 163.95062685012817deg,#5f94f4 .576546311378479turn,#fb923c 228.04857730865479deg,#c82ee1 304.4084072113037deg,#fb923c 333.18861722946167deg)
+}
